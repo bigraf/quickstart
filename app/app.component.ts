@@ -28,5 +28,3 @@ export class AppComponent  {
  		name: 'Windstorm',
  	};
 }
-
-//test
