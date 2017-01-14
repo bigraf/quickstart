@@ -6,27 +6,23 @@ export class Hero {
 }
 
 const HEROES: Hero[] = [
-  { id: 11, name: 'Mr. Nice' },
-  { id: 12, name: 'Narco' },
-  { id: 13, name: 'Bombasto' },
-  { id: 14, name: 'Celeritas' },
-  { id: 15, name: 'Magneta' },
-  { id: 16, name: 'RubberMan' },
-  { id: 17, name: 'Dynama' },
-  { id: 18, name: 'Dr IQ' },
-  { id: 19, name: 'Magma' },
-  { id: 20, name: 'Tornado' }
+  { id: 11, name: 'Batman' },
+  { id: 12, name: 'Hulk Smash' },
+  { id: 13, name: 'Alex The Great' },
+  { id: 14, name: 'Daniel The Great' },
+  { id: 15, name: 'Mommy and Layla Together' },
+  { id: 16, name: 'Papa the mad scientist' },
 ];
 
 
 @Component({
  	selector: 'my-app',
- 	template: `
+
+  template: `
 		<h1>{{title}}</h1>
     <h2>My Heroes</h2>
     <ul class="heroes" >
       <li *ngFor="let hero of heroes" (click)="onSelect(hero)">
-	  <!--test comment-->
         <span class="badge">{{hero.id}}</span> {{hero.name}}
       </li>
     </ul>
@@ -37,9 +33,10 @@ const HEROES: Hero[] = [
 				<label>name: </label>
 				<input [(ngModel)]="selectedHero.name" placeholder="name">
 			</div>
-		</div>
+	  </div>
 		`,
-		styles: [`
+
+    styles: [`
 		  .selected {
 			background-color: #CFD8DC !important;
 			color: white;
@@ -96,10 +93,10 @@ export class AppComponent {
     id: 1,
     name: 'Windstorm',
  	};
-	selectedHero: Hero;
-	
+  heroes = HEROES;
+  selectedHero: Hero;
+
 	onSelect(hero: Hero): void {
 		this.selectedHero = hero;
 	}
 }
-
